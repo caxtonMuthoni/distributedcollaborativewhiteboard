@@ -90,6 +90,25 @@
               <li class="nav-item  mx-2">
                 <a class="nav-link" href="#" :class="{disabled: !user.editing}" @click.prevent="fabricLine"><span> <i class="fas fa-minus mr-2   " /></span> Line</a>
               </li>
+              <li class="nav-item dropdown  mx-2">
+                <a
+                  id="navbarDropdown"
+                  :class="{disabled: !user.editing}"
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  Free Draw
+                </a>
+                <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+                  <a href="" class="text-light dropdown-item" @click.prevent="handDraw('brush')"><span><i class="fas fa-paint-brush  mr-2  " /></span> Brush</a>
+                  <div class="dropdown-divider" />
+                  <a href="" class="text-light dropdown-item" @click.prevent="handDraw('pen')"><span> <i class="fas fa-pen   mr-2 " /> </span> Pen</a>
+                </div>
+              </li>
 
               <li class="nav-item mx-2">
                 <a v-if="!user.editing" class="nav-link" href="#" @click.prevent="requestToDraw"><span> <i class="fas fa-paper-plane mr-2   " /></span>Request To Draw</a>
